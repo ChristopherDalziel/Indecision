@@ -12,7 +12,7 @@ I intend to take this basic REACT application and build on it from here my goals
 - Separated components
 - Testing via Jest or React-Testing-Library (80%+ Coverage)
 
-### Wireframes
+# Wireframes
 
 #### Homepage
 
@@ -29,7 +29,7 @@ Upon clicking enter to get your result page scrolls down to display your answer
 This wouldn't make the logic etc behind my application that much more complex this would be more of a stretch goal to push my CSS/Styling/Animation abilities.
 ![Stretch goal](/assets/readme-3.png)
 
-### Starting point
+# Starting point
 
 Humble beginnings of the basic application
 ![Starting point](/assets/readme-4.png)
