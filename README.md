@@ -11,3 +11,25 @@ I intend to take this basic REACT application and build on it from here my goals
 - @Styled components && Styling
 - Separated components
 - Testing via Jest or React-Testing-Library (80%+ Coverage)
+
+### Wireframes
+
+#### Homepage
+
+Here I would like to display a bold header, and a big choice input bar, as well as displaying each choice as they're entered by the user.
+![Mainpage](/assets/readme-1.png)
+
+#### Computer answer page
+
+Upon clicking enter to get your result page scrolls down to display your answer
+![Computer answer page](/assets/readme-2.png)
+
+#### Computer answer page stretch goal
+
+This wouldn't make the logic etc behind my application that much more complex this would be more of a stretch goal to push my CSS/Styling/Animation abilities.
+![Stretch goal](/assets/readme-3.png)
+
+### Starting point
+
+Humble beginnings of the basic application
+![Starting point](/assets/readme-4.png)
