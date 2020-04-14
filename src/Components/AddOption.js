@@ -1,5 +1,19 @@
 import React from "react";
 
+import styled from "@emotion/styled";
+
+const OptionInput = styled.input`
+  height: 150px;
+  width: 65vw;
+  float: right;
+  font-size: 130px;
+`;
+
+const OptionSubmitButton = styled.button`
+  float: right;
+  margin-right: 10vw;
+`;
+
 class AddOption extends React.Component {
   constructor(props) {
     super(props);
@@ -27,8 +41,8 @@ class AddOption extends React.Component {
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleAddOption}>
-          <input type="text" name="option"></input>
-          <button>Add new option</button>
+          <OptionSubmitButton>Add new option</OptionSubmitButton>
+          <OptionInput type="text" name="option"></OptionInput>
         </form>
       </div>
     );
