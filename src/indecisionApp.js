@@ -1,5 +1,8 @@
 import React from "react";
-import Header from "./Components/header";
+import Header from "./Components/Header";
+import Options from "./Components/Options";
+import Action from "./Components/Action";
+import AddOption from "./Components/AddOption";
 
 class IndecisionApp extends React.Component {
   constructor(props) {
@@ -49,6 +52,7 @@ class IndecisionApp extends React.Component {
     return (
       <div>
         <Header title={title} subTitle={subTitle} />
+
         <Action
           handlePick={this.handlePick}
           hasOptions={this.state.options.length > 0}
@@ -74,74 +78,74 @@ class IndecisionApp extends React.Component {
 //   }
 // }
 
-class Action extends React.Component {
-  render() {
-    return (
-      <div>
-        <button
-          disabled={!this.props.hasOptions}
-          onClick={this.props.handlePick}
-        >
-          What should I do?
-        </button>
-      </div>
-    );
-  }
-}
+// class Action extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <button
+//           disabled={!this.props.hasOptions}
+//           onClick={this.props.handlePick}
+//         >
+//           What should I do?
+//         </button>
+//       </div>
+//     );
+//   }
+// }
 
-class Options extends React.Component {
-  render() {
-    return (
-      <div>
-        <button onClick={this.props.handleDeleteOptions}>Remove All</button>
-        {this.props.options.map((option) => (
-          // We aren't able to access key anywhere else because it is a reserved word, hence we have optionText so we can access the props in the option class.
-          <Option key={option} optionText={option} />
-        ))}
-      </div>
-    );
-  }
-}
+// class Options extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <button onClick={this.props.handleDeleteOptions}>Remove All</button>
+//         {this.props.options.map((option) => (
+//           // We aren't able to access key anywhere else because it is a reserved word, hence we have optionText so we can access the props in the option class.
+//           <Option key={option} optionText={option} />
+//         ))}
+//       </div>
+//     );
+//   }
+// }
 
-class Option extends React.Component {
-  render() {
-    return <div>{this.props.optionText}</div>;
-  }
-}
+// class Option extends React.Component {
+//   render() {
+//     return <div>{this.props.optionText}</div>;
+//   }
+// }
 
-class AddOption extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleAddOption = this.handleAddOption.bind(this);
+// class AddOption extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.handleAddOption = this.handleAddOption.bind(this);
 
-    this.state = {
-      error: undefined,
-    };
-  }
-  handleAddOption(e) {
-    e.preventDefault();
+//     this.state = {
+//       error: undefined,
+//     };
+//   }
+//   handleAddOption(e) {
+//     e.preventDefault();
 
-    const option = e.target.elements.option.value.trim();
-    const error = this.props.handleAddOption(option);
+//     const option = e.target.elements.option.value.trim();
+//     const error = this.props.handleAddOption(option);
 
-    this.setState(() => {
-      return {
-        error,
-      };
-    });
-  }
+//     this.setState(() => {
+//       return {
+//         error,
+//       };
+//     });
+//   }
 
-  render() {
-    return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.handleAddOption}>
-          <input type="text" name="option"></input>
-          <button>Add new option</button>
-        </form>
-      </div>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         {this.state.error && <p>{this.state.error}</p>}
+//         <form onSubmit={this.handleAddOption}>
+//           <input type="text" name="option"></input>
+//           <button>Add new option</button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
 
 export default IndecisionApp;
