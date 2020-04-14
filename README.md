@@ -21,7 +21,7 @@ Here I would like to display a bold header, and a big choice input bar, as well 
 
 #### Computer answer page
 
-Upon clicking enter to get your result page scrolls down to display your answer
+Upon submission your result page scrolls down to display your answer
 ![Computer answer page](/assets/readme-2.png)
 
 #### Computer answer page stretch goal
@@ -31,5 +31,5 @@ This wouldn't make the logic etc behind my application that much more complex th
 
 # Starting point
 
-Humble beginnings of the basic application
+Humble beginnings of the basic application, displaying 3 choices as well as the basic alert received when it's submitted.
 ![Starting point](/assets/readme-4.png)
