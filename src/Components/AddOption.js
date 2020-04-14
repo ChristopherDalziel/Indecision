@@ -6,12 +6,21 @@ const OptionInput = styled.input`
   height: 150px;
   width: 65vw;
   float: right;
-  font-size: 130px;
+  font-size: 100px;
+  margin-right: 10px;
+  border: 1px solid black;
+  text-align: right;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const OptionSubmitButton = styled.button`
   float: right;
-  margin-right: 10vw;
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+  margin-right: 10px;
 `;
 
 class AddOption extends React.Component {
@@ -42,7 +51,12 @@ class AddOption extends React.Component {
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleAddOption}>
           <OptionSubmitButton>Add new option</OptionSubmitButton>
-          <OptionInput type="text" name="option"></OptionInput>
+          <OptionInput
+            autoFocus
+            align="right"
+            type="text"
+            name="option"
+          ></OptionInput>
         </form>
       </div>
     );
