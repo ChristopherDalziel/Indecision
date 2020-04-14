@@ -14,15 +14,13 @@ const AppSubTitle = styled.h2`
   text-align: left;
 `;
 
-class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <AppTitle>{this.props.title}</AppTitle>
-        <AppSubTitle>{this.props.subTitle}</AppSubTitle>
-      </div>
-    );
-  }
-}
+const Header = (props) => {
+  return (
+    <div>
+      <AppTitle>{props.title}</AppTitle>
+      <AppSubTitle>{props.subTitle}</AppSubTitle>
+    </div>
+  );
+};
 
 export default Header;

@@ -15,6 +15,7 @@ class IndecisionApp extends React.Component {
   constructor(props) {
     super(props);
 
+    this.handleDeleteOption = this.handleDeleteOption.bind(this);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlePick = this.handlePick.bind(this);
     this.handleAddOption = this.handleAddOption.bind(this);
@@ -30,6 +31,14 @@ class IndecisionApp extends React.Component {
         options: [],
       };
     });
+  }
+
+  handleDeleteOption(optionToRemove) {
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => {
+        return optionToRemove !== option;
+      }),
+    }));
   }
 
   handlePick() {
@@ -66,6 +75,8 @@ class IndecisionApp extends React.Component {
         />
         <Options
           handleDeleteOptions={this.handleDeleteOptions}
+          handleDeleteOption={this.handleDeleteOption}
+          handleAddOption={this.handleDeleteOption}
           options={this.state.options}
         />
         <AddOption handleAddOption={this.handleAddOption} />
