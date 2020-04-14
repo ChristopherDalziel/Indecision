@@ -1,11 +1,21 @@
 import React from "react";
 
+import styled from "@emotion/styled";
+
+const AppTitle = styled.h1`
+  color: red;
+`;
+
+const AppSubTitle = styled.h2`
+  color: yellow;
+`;
+
 class Header extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.props.title}</h1>
-        <h2>{this.props.subTitle}</h2>
+        <AppTitle>{this.props.title}</AppTitle>
+        <AppSubTitle>{this.props.subTitle}</AppSubTitle>
       </div>
     );
   }
