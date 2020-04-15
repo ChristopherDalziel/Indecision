@@ -1,20 +1,13 @@
 import React from "react";
 
-const Options = (props) => {
-  return (
-    <div>
-      <button onClick={props.handleDeleteOptions}>Remove All</button>
-      {props.options.length === 0 && <p>Please add an option to get started</p>}
-      {props.options.map((option) => (
-        <Option
-          key={option}
-          optionText={option}
-          handleDeleteOption={props.handleDeleteOption}
-        />
-      ))}
-    </div>
-  );
-};
+import styled from "@emotion/styled";
+
+const OptionDiv = styled.div`
+  float: right;
+  background: green;
+  width: 50vw;
+  text-align: right;
+`;
 
 const Option = (props) => {
   return (
@@ -28,6 +21,24 @@ const Option = (props) => {
         remove
       </button>
     </div>
+  );
+};
+
+const Options = (props) => {
+  return (
+    <>
+      <button onClick={props.handleDeleteOptions}>Remove All</button>
+      {props.options.length === 0 && <p>Please add an option to get started</p>}
+      <OptionDiv>
+        {props.options.map((option) => (
+          <Option
+            key={option}
+            optionText={option}
+            handleDeleteOption={props.handleDeleteOption}
+          />
+        ))}
+      </OptionDiv>
+    </>
   );
 };
 

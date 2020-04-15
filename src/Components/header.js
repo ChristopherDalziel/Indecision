@@ -2,7 +2,13 @@ import React from "react";
 
 import styled from "@emotion/styled";
 
+const HeaderContainer = styled.div`
+  width: 50vw;
+  float: left;
+`;
+
 const AppTitle = styled.h1`
+  display: flex;
   color: black;
   font-size: 175px;
   text-align: left;
@@ -16,10 +22,10 @@ const AppSubTitle = styled.h2`
 
 const Header = (props) => {
   return (
-    <div>
+    <HeaderContainer>
       <AppTitle>{props.title}</AppTitle>
       <AppSubTitle>{props.subTitle}</AppSubTitle>
-    </div>
+    </HeaderContainer>
   );
 };
 
