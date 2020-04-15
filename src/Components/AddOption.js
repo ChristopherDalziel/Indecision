@@ -22,6 +22,9 @@ const OptionSubmitButton = styled.button`
   font-size: 25px;
   border: 1px solid black;
   margin-right: 10px;
+  &:focus {
+    outline: none;
+  }
 `;
 
 class AddOption extends React.Component {
@@ -44,6 +47,11 @@ class AddOption extends React.Component {
         error,
       };
     });
+
+    // If there is no error, clear the input field
+    if (!error) {
+      e.target.elements.option.value = "";
+    }
   }
 
   render() {

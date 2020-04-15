@@ -8,7 +8,9 @@ import "./index.css";
 import styled from "@emotion/styled";
 
 const Body = styled.div`
-  background-color: none;
+  background-color: yellow;
+  height: 96vh;
+  padding: 2vh;
 `;
 
 class IndecisionApp extends React.Component {
