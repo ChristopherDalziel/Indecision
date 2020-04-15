@@ -19,6 +19,7 @@ const OptionSubmitButton = styled.button`
   float: right;
   height: 150px;
   width: 150px;
+  font-size: 25px;
   border: 1px solid black;
   margin-right: 10px;
 `;
