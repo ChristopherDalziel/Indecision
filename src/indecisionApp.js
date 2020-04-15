@@ -25,6 +25,26 @@ class IndecisionApp extends React.Component {
     };
   }
 
+  componentDidMount() {
+    try {
+      const jsonOptions = localStorage.getItem("options");
+      const options = JSON.parse(jsonOptions);
+
+      if (options) {
+        this.state(() => ({ options }));
+      }
+    } catch (e) {
+      console.log("There was an error!");
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const jsonOptions = JSON.stringify(this.state.options);
+      localStorage.setItem("options", jsonOptions);
+    }
+  }
+
   handleDeleteOptions() {
     this.setState(() => {
       return {
@@ -63,7 +83,6 @@ class IndecisionApp extends React.Component {
   render() {
     const title = "The Indecision App";
     const subTitle = "Put your life in the hands of a computer";
-    // const options = ["Thing-One", "Thing-Two", "Thing-Four"];
 
     return (
       <Body>
