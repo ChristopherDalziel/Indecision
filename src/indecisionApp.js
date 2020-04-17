@@ -25,7 +25,7 @@ class IndecisionApp extends React.Component {
 
     this.state = {
       options: [],
-      selected: undefined,
+      selectedOption: undefined,
     };
   }
 
@@ -68,7 +68,12 @@ class IndecisionApp extends React.Component {
   handlePick() {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+
+    this.setState(() => {
+      return {
+        selectedOption: option,
+      };
+    });
   }
 
   handleAddOption(option) {
@@ -83,6 +88,14 @@ class IndecisionApp extends React.Component {
       };
     });
   }
+
+  handleModalClose = () => {
+    this.setState(() => {
+      return {
+        selectedOption: undefined,
+      };
+    });
+  };
 
   render() {
     const title = "The Indecision App";
@@ -103,7 +116,10 @@ class IndecisionApp extends React.Component {
           options={this.state.options}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        <OptionModal />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleModalClose={this.handleModalClose}
+        />
       </Body>
     );
   }
