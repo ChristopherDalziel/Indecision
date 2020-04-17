@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import Options from "./Components/Options";
 import Action from "./Components/Action";
 import AddOption from "./Components/AddOption";
+import OptionModal from "./Components/OptionModal";
 
 import "./index.css";
 import styled from "@emotion/styled";
@@ -24,6 +25,7 @@ class IndecisionApp extends React.Component {
 
     this.state = {
       options: [],
+      selected: undefined,
     };
   }
 
@@ -101,6 +103,7 @@ class IndecisionApp extends React.Component {
           options={this.state.options}
         />
         <AddOption handleAddOption={this.handleAddOption} />
+        <OptionModal />
       </Body>
     );
   }
