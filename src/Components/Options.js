@@ -2,12 +2,12 @@ import React from "react";
 
 import styled from "@emotion/styled";
 
-const OptionDiv = styled.div`
-  float: right;
-  background: green;
-  width: 50vw;
-  text-align: right;
-`;
+// const OptionDiv = styled.div`
+//   float: right;
+//   background: green;
+//   width: 50vw;
+//   text-align: right;
+// `;
 
 const Option = (props) => {
   return (
@@ -29,7 +29,7 @@ const Options = (props) => {
     <>
       <button onClick={props.handleDeleteOptions}>Remove All</button>
       {props.options.length === 0 && <p>Please add an option to get started</p>}
-      <OptionDiv>
+      <div>
         {props.options.map((option) => (
           <Option
             key={option}
@@ -37,7 +37,7 @@ const Options = (props) => {
             handleDeleteOption={props.handleDeleteOption}
           />
         ))}
-      </OptionDiv>
+      </div>
     </>
   );
 };
