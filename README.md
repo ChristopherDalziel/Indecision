@@ -10,6 +10,7 @@ I intend to take this basic REACT application and build on it from here my goals
 
 - @Styled components && Styling
 - Separated components
+- Accessability
 - Testing via Jest or React-Testing-Library (80%+ Coverage)
 
 # Wireframes
